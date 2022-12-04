@@ -28,6 +28,7 @@ restricoes = []
 
 
 # Ciclo para atribuição de salas a cada aula, inclusive aulas online, atribuindo esses mesmo valores ao dominio
+# Aulas online foram atribuídas logo de início
 for turma_atual in turma:
     aulas_online_atuais = 0
     aulas_online_max = 2
@@ -100,6 +101,8 @@ for x in range(0, len(turma) * 10):
         restricoes.append(one_class_per_timeslot)
         
         # Aulas online não podem ser seguidas de aulas presenciais
+        # Foram feitas 2 constraints para o caso de ser uma aula antes 
+        # ou depois da aula a ser verificada atualmente
         online_presencial_class_problem_x = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
                                                         f'Aula{x}.dia_semana',f'Aula{y}.dia_semana',
                                                         f'Aula{x}.sala',f'Aula{y}.sala',
@@ -145,24 +148,35 @@ for x in range(0, len(turma) * 10):
 
 # Verifica se uma uc aparece 2 vezes por semana
 def two_lessons_uc_per_schedule(*list):
+    # Percorre as UCs de cada aula
     for x in uc:
+        # Caso o número de vezes que uma disciplina apareça num horário seja diferente de 2
         if (list.count(x) != 2):
             return False
     return True
 
 # Verifica se tem mais de 3 aulas por dia
 def three_lessons_per_day(*list):
+    # Percorre os dias da semana
     for x in range(1,6):
+        # Caso o dia apareça mais que 3 vezes no horário
         if (list.count(x) > 3):
             return False
     return True
 
-
+# restrições que ocorrerão em cada horário (ou seja em cada turma)
 for x in turma:
-    two_lessons_of_each_subject_per_week_constraint = Constraint(tuple(list_of_uc_of_classes(x)), two_lessons_uc_per_schedule)
-    restricoes.append(two_lessons_of_each_subject_per_week_constraint)
-    tree_lessons_per_day_constraint = Constraint(tuple(list_of_weekday_of_classes(x)), three_lessons_per_day)
-    restricoes.append(tree_lessons_per_day_constraint)
+    # Uma disciplina só pode ser lecionada 2 vezes por semana
+    # Neste caso é criada uma lista (tuple, tendo em conta os argumentos de Constraint()) com as UCs de cada aula por nodo
+    # Esta lista é usada na função chamada no parâmetro seguito, o mesmo acontece na constraint seguinte
+    uc_twice_per_week = Constraint(tuple(list_of_uc_of_classes(x)), two_lessons_uc_per_schedule)
+    
+    restricoes.append(uc_twice_per_week)
+    
+    # Só pode haver um máximo de 3 aulas por dia
+    max_three_lessons_per_day = Constraint(tuple(list_of_weekday_of_classes(x)), three_lessons_per_day)
+    
+    restricoes.append(max_three_lessons_per_day)
 
 #region Prints Teste
 
@@ -174,9 +188,10 @@ for x in turma:
 
 #endregion
 
+# Pesquisa CSP e printagem de estado final atingido
 class_scheduling = NaryCSP(dominio, restricoes)
-
-print(ac_search_solver(class_scheduling, arc_heuristic=sat_up))
+print(ac_solver(class_scheduling, arc_heuristic=sat_up))
+#print(ac_search_solver(class_scheduling, arc_heuristic=sat_up))
 #print(at_least_towfour_in_same_room(dominio,1,{1}))
 #print(more_than_2_UC_per_week(dominio,1,1))
 #print(more_than_2_UC_per_week(get_only_list_of_attribute_from_class(x, "uc"),turma[1],2,{1}))
