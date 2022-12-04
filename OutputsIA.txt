@@ -1,0 +1,279 @@
+1º --------------------------------------------------------------
+
+1 - 'Aula0.turma': 1, 'Aula1.turma': 1, 'Aula2.turma': 1, 'Aula3.turma': 1, 'Aula4.turma': 1, 'Aula5.turma': 1, 'Aula6.turma': 1, 'Aula7.turma': 1, 'Aula8.turma': 1, 'Aula9.turma': 1
+2 - 'Aula10.turma': 2, 'Aula11.turma': 2, 'Aula12.turma': 2, 'Aula13.turma': 2, 'Aula14.turma': 2, 'Aula15.turma': 2, 'Aula16.turma': 2, 'Aula17.turma': 2, 'Aula18.turma': 2, 'Aula19.turma': 2
+
+
+TURMA 1:
+'Aula0.uc': 4, 'Aula0.sala': 5, 'Aula0.dia_semana': 5, 'Aula0.duracao': 2, 'Aula0.inicioAula': 15, 
+'Aula1.uc: 4, 'Aula1.sala': 5, 'Aula1.dia_semana': 5, 'Aula1.duracao': 2, 'Aula1.inicioAula': 13,
+'Aula2.uc': 4, 'Aula2.sala': 5, 'Aula2.dia_semana': 5, 'Aula2.duracao': 2, 'Aula2.inicioAula': 11,
+'Aula3.uc': 4, 'Aula3.sala': 5, 'Aula3.dia_semana': 5, 'Aula3.duracao': 2, 'Aula3.inicioAula': 17, 
+'Aula4.uc': 4, 'Aula4.sala': 5, 'Aula4.dia_semana': 5, 'Aula4.duracao': 2, 'Aula4.inicioAula': 9,
+'Aula5.uc': 4, 'Aula5.sala': 5, 'Aula5.dia_semana': 4, 'Aula5.duracao': 2, 'Aula5.inicioAula': 15,
+'Aula6.uc': 4, 'Aula6.sala': 5, 'Aula6.dia_semana': 4, 'Aula6.duracao': 2, 'Aula6.inicioAula': 13,
+'Aula7.uc': 4, 'Aula7.sala': 5, 'Aula7.dia_semana': 4, 'Aula7.duracao': 2, 'Aula7.inicioAula': 11,
+'Aula8.uc': 4, 'Aula8.sala': 5, 'Aula8.dia_semana': 4, 'Aula8.duracao': 2,'Aula8.inicioAula': 17,
+'Aula9.uc': 4, 'Aula9.sala': 5, 'Aula9.dia_semana': 4, 'Aula9.duracao': 2, 'Aula9.inicioAula': 9,
+
+TURMA 2:
+'Aula10.uc': 4, 'Aula10.sala': 5, 'Aula10.dia_semana': 3, 'Aula10.duracao': 2, 'Aula10.inicioAula': 15, 
+'Aula11.uc': 4, 'Aula11.sala': 5, 'Aula11.dia_semana': 3, 'Aula11.duracao': 2, 'Aula11.inicioAula': 13,
+'Aula12.uc': 4, 'Aula12.sala': 5, 'Aula12.dia_semana': 3, 'Aula12.duracao': 2, 'Aula12.inicioAula': 11,
+'Aula13.uc': 4, 'Aula13.sala': 5, 'Aula13.dia_semana': 3, 'Aula13.duracao': 2, 'Aula13.inicioAula': 17,
+'Aula14.uc': 4, 'Aula14.sala': 5, 'Aula14.dia_semana': 3, 'Aula14.duracao': 2, 'Aula14.inicioAula': 9,
+'Aula15.uc': 4, 'Aula15.sala': 5, 'Aula15.dia_semana': 2, 'Aula15.duracao': 2, 'Aula15.inicioAula': 15,
+'Aula16.uc': 4, 'Aula16.sala': 5, 'Aula16.dia_semana': 2, 'Aula16.duracao': 2, 'Aula16.inicioAula': 13,
+'Aula17.uc': 4, 'Aula17.sala': 5, 'Aula17.dia_semana': 2, 'Aula17.duracao': 2, 'Aula17.inicioAula': 11,
+'Aula18.uc': 4, 'Aula18.sala': 5, 'Aula18.dia_semana': 2, 'Aula18.duracao': 2, 'Aula18.inicioAula': 17, 
+'Aula19.uc': 4, 'Aula19.sala': 5, 'Aula19.dia_semana': 2, 'Aula19.duracao': 2, 'Aula19.inicioAula': 9
+
+
+
+
+-----------------------------------------------------------------
+2º --------------------------------------------------------------
+
+Turmas bem divididas
+
+'Aula0.uc': 4, 'Aula0.sala': 5, 'Aula0.dia_semana': 5, 'Aula0.duracao': 2, 'Aula0.inicioAula': 15,
+'Aula1.uc': 4, 'Aula1.sala': 5, 'Aula1.dia_semana': 5, 'Aula1.duracao': 2, 'Aula1.inicioAula': 13,
+'Aula2.uc': 4, 'Aula2.sala': 5, 'Aula2.dia_semana': 5, 'Aula2.duracao': 2, 'Aula2.inicioAula': 11,
+'Aula3.uc': 4, 'Aula3.sala': 5, 'Aula3.dia_semana': 4, 'Aula3.duracao': 2, 'Aula3.inicioAula': 15,
+'Aula4.uc': 4, 'Aula4.sala': 5, 'Aula4.dia_semana': 4, 'Aula4.duracao': 2, 'Aula4.inicioAula': 13,
+'Aula5.uc': 4, 'Aula5.sala': 5, 'Aula5.dia_semana': 4, 'Aula5.duracao': 2, 'Aula5.inicioAula': 11,
+'Aula6.uc': 4, 'Aula6.sala': 5, 'Aula6.dia_semana': 3, 'Aula6.duracao': 2, 'Aula6.inicioAula': 15,
+'Aula7.uc': 4, 'Aula7.sala': 5, 'Aula7.dia_semana': 3, 'Aula7.duracao': 2, 'Aula7.inicioAula': 13,
+'Aula8.uc': 4, 'Aula8.sala': 5, 'Aula8.dia_semana': 3, 'Aula8.duracao': 2, 'Aula8.inicioAula': 11,
+'Aula9.uc': 4, 'Aula9.sala': 5, 'Aula9.dia_semana': 2, 'Aula9.duracao': 2, 'Aula9.inicioAula': 15,
+'Aula10.uc': 4, 'Aula10.sala': 5, 'Aula10.dia_semana': 5, 'Aula10.duracao': 2, 'Aula10.inicioAula': 17,
+'Aula11.uc': 4, 'Aula11.sala': 5, 'Aula11.dia_semana': 4, 'Aula11.duracao': 2, 'Aula11.inicioAula': 17, 
+'Aula12.uc': 4, 'Aula12.sala': 5, 'Aula12.dia_semana': 3, 'Aula12.duracao': 2, 'Aula12.inicioAula': 17,
+'Aula13.uc': 4, 'Aula13.sala': 5, 'Aula13.dia_semana': 2, 'Aula13.duracao': 2, 'Aula13.inicioAula': 13,
+'Aula14.uc': 4, 'Aula14.sala': 5, 'Aula14.dia_semana': 2, 'Aula14.duracao': 2, 'Aula14.inicioAula': 11,
+'Aula15.uc': 4, 'Aula15.sala': 5, 'Aula15.dia_semana': 2, 'Aula15.duracao': 2, 'Aula15.inicioAula': 9,
+'Aula16.uc': 4, 'Aula16.sala': 5, 'Aula16.dia_semana': 1, 'Aula16.duracao': 2, 'Aula16.inicioAula': 15,
+'Aula17.uc': 4, 'Aula17.sala': 5, 'Aula17.dia_semana': 1, 'Aula17.duracao': 2, 'Aula17.inicioAula': 13,
+'Aula18.uc': 4, 'Aula18.sala': 5, 'Aula18.dia_semana': 1, 'Aula18.duracao': 2, 'Aula18.inicioAula': 11,
+'Aula19.uc': 3, 'Aula19.sala': 5, 'Aula19.dia_semana': 5, 'Aula19.duracao': 2, 'Aula19.inicioAula': 15
+
+-----------------------------------------------------------------
+3º --------------------------------------------------------------
+
+'Aula0.uc': 4, 'Aula0.sala': 5, 'Aula0.dia_semana': 5, 'Aula0.duracao': 2, 'Aula0.inicioAula': 15, 
+'Aula1.uc': 4, 'Aula1.sala': 5, 'Aula1.dia_semana': 4, 'Aula1.duracao': 2, 'Aula1.inicioAula': 15, 
+'Aula2.uc': 4, 'Aula2.sala': 5, 'Aula2.dia_semana': 3, 'Aula2.duracao': 2, 'Aula2.inicioAula': 15,
+'Aula3.uc': 4, 'Aula3.sala': 5, 'Aula3.dia_semana': 2, 'Aula3.duracao': 2, 'Aula3.inicioAula': 15,
+'Aula4.uc': 4, 'Aula4.sala': 5, 'Aula4.dia_semana': 1, 'Aula4.duracao': 2, 'Aula4.inicioAula': 15,
+'Aula5.uc': 3, 'Aula5.sala': 5, 'Aula5.dia_semana': 5, 'Aula5.duracao': 2, 'Aula5.inicioAula': 13,
+'Aula6.uc': 3, 'Aula6.sala': 5, 'Aula6.dia_semana': 4, 'Aula6.duracao': 2, 'Aula6.inicioAula': 13,
+'Aula7.uc': 3, 'Aula7.sala': 5, 'Aula7.dia_semana': 3, 'Aula7.duracao': 2, 'Aula7.inicioAula': 13,
+'Aula8.uc': 3, 'Aula8.sala': 5, 'Aula8.dia_semana': 2, 'Aula8.duracao': 2, 'Aula8.inicioAula': 13,
+'Aula9.uc': 3, 'Aula9.sala': 5, 'Aula9.dia_semana': 1, 'Aula9.duracao': 2, 'Aula9.inicioAula': 13,
+
+Aulas das turma 2 seguem o mesmo rumo
+
+-----------------------------------------------------------------
+4º --------------------------------------------------------------
+
+
+{'Aula0.turma': 1, 'Aula0.sala': 5, 
+'Aula1.turma': 1, 'Aula1.sala': 5, 
+'Aula2.turma': 1, 'Aula2.sala': 4, 
+'Aula3.turma': 1, 'Aula3.sala': 4, 
+'Aula4.turma': 1, 'Aula4.sala': 4, 
+'Aula5.turma': 1, 'Aula5.sala': 4, 
+'Aula6.turma': 1, 'Aula6.sala': 4, 
+'Aula7.turma': 1, 'Aula7.sala': 4, 
+'Aula8.turma': 1, 'Aula8.sala': 4, 
+'Aula9.turma': 1, 'Aula9.sala': 4, 
+'Aula10.turma': 2, 'Aula10.sala': 5, 
+'Aula11.turma': 2, 'Aula11.sala': 5, 
+'Aula12.turma': 2, 'Aula12.sala': 4, 
+'Aula13.turma': 2, 'Aula13.sala': 4, 
+'Aula14.turma': 2, 'Aula14.sala': 4, 
+'Aula15.turma': 2, 'Aula15.sala': 4, 
+'Aula16.turma': 2, 'Aula16.sala': 4, 
+'Aula17.turma': 2, 'Aula17.sala': 4, 
+'Aula18.turma': 2, 'Aula18.sala': 4, 
+'Aula19.turma': 2, 'Aula19.sala': 4, 
+
+'Aula0.uc': 4, 'Aula0.dia_semana': 5, 'Aula0.duracao': 2, 'Aula0.inicioAula': 15, 
+'Aula1.uc': 4, 'Aula1.dia_semana': 4, 'Aula1.duracao': 2, 'Aula1.inicioAula': 15, 
+'Aula2.uc': 4, 'Aula2.dia_semana': 3, 'Aula2.duracao': 2, 'Aula2.inicioAula': 15, 
+'Aula3.uc': 4, 'Aula3.dia_semana': 2, 'Aula3.duracao': 2, 'Aula3.inicioAula': 15, 
+'Aula4.uc': 4, 'Aula4.dia_semana': 1, 'Aula4.duracao': 2, 'Aula4.inicioAula': 15, 
+'Aula5.uc': 3, 'Aula5.dia_semana': 5, 'Aula5.duracao': 2, 'Aula5.inicioAula': 13, 
+'Aula6.uc': 3, 'Aula6.dia_semana': 4, 'Aula6.duracao': 2, 'Aula6.inicioAula': 13, 
+'Aula7.uc': 3, 'Aula7.dia_semana': 3, 'Aula7.duracao': 2, 'Aula7.inicioAula': 13, 
+'Aula8.uc': 3, 'Aula8.dia_semana': 2, 'Aula8.duracao': 2, 'Aula8.inicioAula': 13, 
+'Aula9.uc': 3, 'Aula9.dia_semana': 1, 'Aula9.duracao': 2, 'Aula9.inicioAula': 13, 
+'Aula10.uc': 4, 'Aula10.dia_semana': 5, 'Aula10.duracao': 2, 'Aula10.inicioAula': 13, 
+'Aula11.uc': 4, 'Aula11.dia_semana': 4, 'Aula11.duracao': 2, 'Aula11.inicioAula': 13, 
+'Aula12.uc': 4, 'Aula12.dia_semana': 3, 'Aula12.duracao': 2, 'Aula12.inicioAula': 11, 
+'Aula13.uc': 4, 'Aula13.dia_semana': 2, 'Aula13.duracao': 2, 'Aula13.inicioAula': 11, 
+'Aula14.uc': 4, 'Aula14.dia_semana': 1, 'Aula14.duracao': 2, 'Aula14.inicioAula': 11, 
+'Aula15.uc': 3, 'Aula15.dia_semana': 5, 'Aula15.duracao': 2, 'Aula15.inicioAula': 15, 
+'Aula16.uc': 3, 'Aula16.dia_semana': 4, 'Aula16.duracao': 2, 'Aula16.inicioAula': 15, 
+'Aula17.uc': 3, 'Aula17.dia_semana': 3, 'Aula17.duracao': 2, 'Aula17.inicioAula': 9, 
+'Aula18.uc': 3, 'Aula18.dia_semana': 2, 'Aula18.duracao': 2, 'Aula18.inicioAula': 9, 
+'Aula19.uc': 3, 'Aula19.dia_semana': 1, 'Aula19.duracao': 2, 'Aula19.inicioAula': 9}
+
+
+-----------------------------------------------------------------
+5º --------------------------------------------------------------
+
+
+'Aula0.turma': 1, 'Aula0.sala': 5, 
+'Aula1.turma': 1, 'Aula1.sala': 5, 
+'Aula2.turma': 1, 'Aula2.sala': 1, 
+'Aula3.turma': 1, 'Aula3.sala': 2, 
+'Aula4.turma': 1, 'Aula4.sala': 3,
+'Aula5.turma': 1, 'Aula5.sala': 3,
+'Aula6.turma': 1, 'Aula6.sala': 2,
+'Aula7.turma': 1, 'Aula7.sala': 1,
+'Aula8.turma': 1, 'Aula8.sala': 4, 
+'Aula9.turma': 1, 'Aula9.sala': 4,
+'Aula10.turma': 2, 'Aula10.sala': 5,
+'Aula11.turma': 2, 'Aula11.sala': 5,
+'Aula12.turma': 2, 'Aula12.sala': 4,
+'Aula13.turma': 2, 'Aula13.sala': 2, 
+'Aula14.turma': 2, 'Aula14.sala': 2,
+'Aula15.turma': 2, 'Aula15.sala': 2,
+'Aula16.turma': 2, 'Aula16.sala': 2, 
+'Aula17.turma': 2, 'Aula17.sala': 1, 
+'Aula18.turma': 2, 'Aula18.sala': 3, 
+'Aula19.turma': 2, 'Aula19.sala': 4
+
+'Aula0.uc': 4, 'Aula0.dia_semana': 5, 'Aula0.duracao': 2, 'Aula0.inicioAula': 15,
+'Aula1.uc': 4, 'Aula1.dia_semana': 4, 'Aula1.duracao': 2, 'Aula1.inicioAula': 15,
+'Aula2.uc': 4, 'Aula2.dia_semana': 3, 'Aula2.duracao': 2, 'Aula2.inicioAula': 15,
+'Aula3.uc': 4, 'Aula3.dia_semana': 2, 'Aula3.duracao': 2, 'Aula3.inicioAula': 15,
+'Aula4.uc': 4, 'Aula4.dia_semana': 1, 'Aula4.duracao': 2, 'Aula4.inicioAula': 15,
+'Aula5.uc': 3, 'Aula5.dia_semana': 5, 'Aula5.duracao': 2, 'Aula5.inicioAula': 13,
+'Aula6.uc': 3, 'Aula6.dia_semana': 4, 'Aula6.duracao': 2, 'Aula6.inicioAula': 13,
+'Aula7.uc': 3, 'Aula7.dia_semana': 3, 'Aula7.duracao': 2, 'Aula7.inicioAula': 13,
+'Aula8.uc': 3, 'Aula8.dia_semana': 2, 'Aula8.duracao': 2, 'Aula8.inicioAula': 13,
+'Aula9.uc': 3, 'Aula9.dia_semana': 1, 'Aula9.duracao': 2, 'Aula9.inicioAula': 13,
+'Aula10.uc': 4, 'Aula10.dia_semana': 5, 'Aula10.duracao': 2, 'Aula10.inicioAula': 13, 
+'Aula11.uc': 4, 'Aula11.dia_semana': 4, 'Aula11.duracao': 2, 'Aula11.inicioAula': 13, 
+'Aula12.uc': 4, 'Aula12.dia_semana': 3, 'Aula12.duracao': 2, 'Aula12.inicioAula': 13, 
+'Aula13.uc': 4, 'Aula13.dia_semana': 2, 'Aula13.duracao': 2, 'Aula13.inicioAula': 13, 
+'Aula14.uc': 4, 'Aula14.dia_semana': 1, 'Aula14.duracao': 2, 'Aula14.inicioAula': 13, 
+'Aula15.uc': 3, 'Aula15.dia_semana': 5, 'Aula15.duracao': 2, 'Aula15.inicioAula': 15, 
+'Aula16.uc': 3, 'Aula16.dia_semana': 4, 'Aula16.duracao': 2, 'Aula16.inicioAula': 15, 
+'Aula17.uc': 3, 'Aula17.dia_semana': 3, 'Aula17.duracao': 2, 'Aula17.inicioAula': 11, 
+'Aula18.uc': 3, 'Aula18.dia_semana': 2, 'Aula18.duracao': 2, 'Aula18.inicioAula': 15,
+'Aula19.uc': 3, 'Aula19.dia_semana': 1, 'Aula19.duracao': 2, 'Aula19.inicioAula': 15}
+
+
+-----------------------------------------------------------------
+6º --------------------------------------------------------------
+
+
+
+{'Aula0.turma': 1,
+'Aula1.turma': 1, 
+'Aula2.turma': 1,
+'Aula3.turma': 1,
+'Aula4.turma': 1,  
+'Aula5.turma': 1,
+'Aula6.turma': 1,
+'Aula7.turma': 1, 
+'Aula8.turma': 1,
+'Aula9.turma': 1,
+'Aula10.turma': 2, 'Aula10.sala': 5, 
+'Aula11.turma': 2, 'Aula11.sala': 5, 
+'Aula12.turma': 2, 'Aula12.sala': 2, 
+'Aula13.turma': 2, 'Aula13.sala': 4, 
+'Aula14.turma': 2, 'Aula14.sala': 2, 
+'Aula15.turma': 2, 'Aula15.sala': 3, 
+'Aula16.turma': 2, 'Aula16.sala': 4, 
+'Aula17.turma': 2, 'Aula17.sala': 4, 
+'Aula18.turma': 2, 'Aula18.sala': 4, 
+'Aula19.turma': 2, 'Aula19.sala': 2,
+
+'Aula0.uc': 2, 'Aula0.dia_semana': 5, 'Aula0.duracao': 2, 'Aula0.inicioAula': 15, s 'Aula0.sala': 5, 
+'Aula1.uc': 2, 'Aula1.dia_semana': 4, 'Aula1.duracao': 2, 'Aula1.inicioAula': 15, s'Aula1.sala': 5, 
+'Aula2.uc': 2, 'Aula2.dia_semana': 3, 'Aula2.duracao': 2, 'Aula2.inicioAula': 15, s'Aula2.sala': 3, 
+'Aula3.uc': 1, 'Aula3.dia_semana': 5, 'Aula3.duracao': 2, 'Aula3.inicioAula': 13, s 'Aula3.sala': 3, 
+'Aula4.uc': 3, 'Aula4.dia_semana': 5, 'Aula4.duracao': 2, 'Aula4.inicioAula': 11, s'Aula4.sala': 1,
+'Aula5.uc': 3, 'Aula5.dia_semana': 4, 'Aula5.duracao': 2, 'Aula5.inicioAula': 13, s 'Aula5.sala': 2, 
+'Aula6.uc': 1, 'Aula6.dia_semana': 4, 'Aula6.duracao': 2, 'Aula6.inicioAula': 11, s 'Aula6.sala': 2, 
+'Aula7.uc': 3, 'Aula7.dia_semana': 3, 'Aula7.duracao': 2, 'Aula7.inicioAula': 13, 'Aula7.sala': 1, 
+'Aula8.uc': 4, 'Aula8.dia_semana': 3, 'Aula8.duracao': 2, 'Aula8.inicioAula': 11,  'Aula8.sala': 2, 
+'Aula9.uc': 2, 'Aula9.dia_semana': 2, 'Aula9.duracao': 2, 'Aula9.inicioAula': 15, 'Aula9.sala': 4, 
+ 
+'Aula10.uc': 2, 'Aula10.dia_semana': 5, 'Aula10.duracao': 2, 'Aula10.inicioAula': 13, 
+'Aula11.uc': 4, 'Aula11.dia_semana': 5, 'Aula11.duracao': 2, 'Aula11.inicioAula': 15, 
+'Aula12.uc': 1, 'Aula12.dia_semana': 5, 'Aula12.duracao': 2, 'Aula12.inicioAula': 11, 
+'Aula13.uc': 2, 'Aula13.dia_semana': 4, 'Aula13.duracao': 2, 'Aula13.inicioAula': 13, 
+'Aula14.uc': 4, 'Aula14.dia_semana': 4, 'Aula14.duracao': 2, 'Aula14.inicioAula': 15, 
+'Aula15.uc': 2, 'Aula15.dia_semana': 3, 'Aula15.duracao': 2, 'Aula15.inicioAula': 13, 
+'Aula16.uc': 4, 'Aula16.dia_semana': 3, 'Aula16.duracao': 2, 'Aula16.inicioAula': 15, 
+'Aula17.uc': 1, 'Aula17.dia_semana': 4, 'Aula17.duracao': 2, 'Aula17.inicioAula': 17, 
+'Aula18.uc': 4, 'Aula18.dia_semana': 2, 'Aula18.duracao': 2, 'Aula18.inicioAula': 13, 
+'Aula19.uc': 2, 'Aula19.dia_semana': 2, 'Aula19.duracao': 2, 'Aula19.inicioAula': 11}
+
+-----------------------------------------------------------------
+6º --------------------------------------------------------------
+Aulas online fixed
+
+
+'Aula0.turma': 1, 'Aula0.sala': 5, 
+'Aula1.turma': 1, 'Aula1.sala': 5, 
+'Aula2.turma': 1, 'Aula2.sala': 2, 
+'Aula3.turma': 1, 'Aula3.sala': 3, 
+'Aula4.turma': 1, 'Aula4.sala': 3, 
+'Aula5.turma': 1, 'Aula5.sala': 4,
+'Aula6.turma': 1, 'Aula6.sala': 1,
+'Aula7.turma': 1, 'Aula7.sala': 4, 
+'Aula8.turma': 1, 'Aula8.sala': 3, 
+'Aula9.turma': 1, 'Aula9.sala': 1, 
+
+'Aula0.uc': 3, 'Aula0.dia_semana': 5, 'Aula0.duracao': 2, 'Aula0.inicioAula': 15, 
+'Aula1.uc': 3, 'Aula1.dia_semana': 4, 'Aula1.duracao': 2, 'Aula1.inicioAula': 15, 
+'Aula2.uc': 4, 'Aula2.dia_semana': 5, 'Aula2.duracao': 2, 'Aula2.inicioAula': 12, 
+'Aula3.uc': 2, 'Aula3.dia_semana': 4, 'Aula3.duracao': 2, 'Aula3.inicioAula': 12, 
+'Aula4.uc': 4, 'Aula4.dia_semana': 3, 'Aula4.duracao': 2, 'Aula4.inicioAula': 15, 
+'Aula5.uc': 2, 'Aula5.dia_semana': 3, 'Aula5.duracao': 2, 'Aula5.inicioAula': 13, 
+'Aula6.uc': 2, 'Aula6.dia_semana': 2, 'Aula6.duracao': 2, 'Aula6.inicioAula': 15, 
+'Aula7.uc': 4, 'Aula7.dia_semana': 2, 'Aula7.duracao': 2, 'Aula7.inicioAula': 13, 
+'Aula8.uc': 1, 'Aula8.dia_semana': 3, 'Aula8.duracao': 2, 'Aula8.inicioAula': 11, 
+'Aula9.uc': 4, 'Aula9.dia_semana': 1, 'Aula9.duracao': 2, 'Aula9.inicioAula': 15, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

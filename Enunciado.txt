@@ -1,0 +1,23 @@
+3. Horários das aulas
+
+No atual cenário de crise energética, pretende-se remarcar os horários das aulas do
+cursos de graduação da escola de tecnologia, a fim de reduzir o deslocamento para o campus e para
+diminuir a necessidade de ar condicionado.
+
+Considere que todas as aulas, com a duração de 2 horas, decorrem durante a semana. Todas as classes têm 10
+aulas por semana, das quais 1 ou 2 aulas são online. 
+
+Uma aula não deve ter mais de 3 aulas por dia.
+
+As aulas online não podem ser reservadas imediatamente ou imediatamente após uma aula presencial lição. 
+
+Apenas até 2 aulas podem ocorrer pela manhã e até 2 aulas à tarde.
+
+Cada turma tem de 2 a 4 aulas em uma sala de aula específica.
+Você deve formular e implementar um agente que encontre a melhor solução para os horários das aulas, minimizando o número de dias
+que cada classe deve viajar para o campus e o número de salas de aula
+usado. 
+
+
+Soluções que possuem horários com menos furos devem ser valorizadas. Outras restrições devem
+ser adicionado para tornar este problema mais realista.
