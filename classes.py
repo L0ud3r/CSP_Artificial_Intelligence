@@ -29,16 +29,3 @@ class Aula:
        
     def __str__(self):
         return f"{self.turma},{self.uc},{self.sala},{self.dia_semana},{self.duracao},{self.inicioAula}"
-        
-
-     
-
-
-
-    
- 
-    
-
-
-
-        

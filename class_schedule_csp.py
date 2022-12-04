@@ -57,8 +57,7 @@ for x, list_enumerate in enumerate(aulas):
 # Ciclos que percorrem as turmas (fazendo comparação de cada aula entre cada turma)
 for x in range(0, len(turma) * 10):
     for y in range(x + 1, len(turma) * 10):
-        
-       # Evita que para diferentes turmas tenham a mesma uc no mesmo bloco de um determinado dia
+        # Para um slot do horario, não pode ter a mesma uc na mesma turma
         one_uc_per_timeslot = Constraint((f'Aula{x}.uc', f'Aula{y}.uc',
                                           f'Aula{x}.turma', f'Aula{y}.turma',
                                           f'Aula{x}.dia_semana',f'Aula{y}.dia_semana'
@@ -70,8 +69,8 @@ for x in range(0, len(turma) * 10):
                                 if (aulax_uc == aulay_uc and aulax_turma == aulay_turma) else True)
 
         restricoes.append(one_uc_per_timeslot)
-        
-        # Para um slot do horario, em diferentes horarios não pode ter a mesma sala
+
+        # Para um slot do horario, não pode ter a mesma sala
         one_classroom_per_timeslot = Constraint((f'Aula{x}.sala', f'Aula{y}.sala',
                                                 f'Aula{x}.dia_semana',f'Aula{y}.dia_semana',
                                                 f'Aula{x}.duracao',f'Aula{y}.duracao',
@@ -85,8 +84,8 @@ for x in range(0, len(turma) * 10):
                                 if (aulax_sala != 5 and aulax_sala == aulay_sala and aulax_dia == aulay_dia) else True)
         
         restricoes.append(one_classroom_per_timeslot)
-
-        # Para um slot do horario, em diferentes horarios não pode ter a mesma turma
+        
+        # Para um slot do horario, não pode ter a mesma turma
         one_class_per_timeslot = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
                                             f'Aula{x}.dia_semana',f'Aula{y}.dia_semana',
                                             f'Aula{x}.duracao',f'Aula{y}.duracao',
@@ -100,40 +99,49 @@ for x in range(0, len(turma) * 10):
                                 if (aulax_turma == aulay_turma and aulax_dia == aulay_dia) else True)
         
         restricoes.append(one_class_per_timeslot)
-
-        # As aulas online não podem ser reservadas imediatamente após uma aula presencial.
-        online_class_not_after_presencial_class_after = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
-                                                                    f'Aula{x}.dia_semana', f'Aula{y}.dia_semana', 
-                                                                    f'Aula{x}.inicioAula', f'Aula{y}.inicioAula',
-                                                                    f'Aula{x}.duracao', f'Aula{x}.sala', f'Aula{y}.sala'), 
-                                                                   lambda aulax_turma, aulay_turma,
-                                                                    aulax_dia, aulay_dia,
-                                                                    aulax_inicio, aulay_inicio,
-                                                                    aulax_duracao, aulax_sala,
-                                                                    aulay_sala : (aulay_sala != 5)
-                                                                   if(aulax_turma == aulay_turma and aulax_dia == aulay_dia and
-                                                                      (aulay_inicio == aulax_inicio - aulax_duracao or 
-                                                                       aulay_inicio == aulax_inicio + aulax_duracao or
-                                                                       aulax_inicio == aulay_inicio - aulax_duracao or
-                                                                       aulax_inicio == aulay_inicio + aulax_duracao) and
-                                                                      aulax_sala != 5) else True)
-
-        # As aulas online não podem ser reservadas imediatamente antes de uma aula presencial.
-        online_class_not_after_presencial_class_before = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
-                                                                     f'Aula{x}.dia_semana', f'Aula{y}.dia_semana',
-                                                                     f'Aula{x}.inicioAula', f'Aula{y}.inicioAula',
-                                                                     f'Aula{x}.duracao', f'Aula{x}.sala', f'Aula{y}.sala'),
-                                                                    lambda aulax_turma, aulay_turma,
-                                                                    aulax_dia, aulay_dia, aulax_inicio,
-                                                                    aulay_inicio, aulay_duracao, aulax_sala,
-                                                                    aulay_sala : (aulax_sala != 5) 
-                                                                    if(aulax_turma == aulay_turma and aulax_dia == aulay_dia and 
-                                                                       (aulay_inicio == aulax_inicio - aulay_duracao or
-                                                                        aulay_inicio == aulax_inicio + aulay_duracao or
-                                                                        aulax_inicio == aulay_inicio - aulay_duracao or
-                                                                        aulax_inicio == aulay_inicio + aulay_duracao) and
-                                                                       aulay_sala != 5) else True)
-        restricoes.append(online_class_not_after_presencial_class_before)
+        
+        # Aulas online não podem ser seguidas de aulas presenciais
+        online_presencial_class_problem_x = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
+                                                        f'Aula{x}.dia_semana',f'Aula{y}.dia_semana',
+                                                        f'Aula{x}.sala',f'Aula{y}.sala',
+                                                        f'Aula{x}.duracao',f'Aula{y}.duracao',
+                                                        f'Aula{x}.inicioAula',f'Aula{y}.inicioAula',
+                                                        ), lambda aulax_turma, aulay_turma,
+                                                                  aulax_dia, aulay_dia, 
+                                                                  aulax_sala, aulay_sala,
+                                                                  aulax_duracao, aulay_duracao,
+                                                                  aulax_inicio, aulay_inicio:
+                                
+                                (aulax_sala != 5)
+                                if (aulax_turma == aulay_turma and aulax_dia == aulay_dia and 
+                                    (aulay_inicio == aulax_inicio - aulax_duracao or 
+                                    aulay_inicio == aulax_inicio + aulax_duracao or 
+                                    aulax_inicio == aulay_inicio - aulay_duracao or 
+                                    aulax_inicio == aulay_inicio + aulay_duracao) and 
+                                    aulay_sala != 5) else True)
+        
+        restricoes.append(online_presencial_class_problem_x)
+        
+        online_presencial_class_problem_y = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
+                                                        f'Aula{x}.dia_semana',f'Aula{y}.dia_semana',
+                                                        f'Aula{x}.sala',f'Aula{y}.sala',
+                                                        f'Aula{x}.duracao',f'Aula{y}.duracao',
+                                                        f'Aula{x}.inicioAula',f'Aula{y}.inicioAula',
+                                                        ), lambda aulax_turma, aulay_turma,
+                                                        aulax_dia, aulay_dia, 
+                                                        aulax_sala, aulay_sala,
+                                                        aulax_duracao, aulay_duracao,
+                                                        aulax_inicio, aulay_inicio:
+                                            
+                                (aulay_sala != 5)
+                                if (aulax_turma == aulay_turma and aulax_dia == aulay_dia and 
+                                    (aulay_inicio == aulax_inicio - aulax_duracao or 
+                                    aulay_inicio == aulax_inicio + aulax_duracao or 
+                                    aulax_inicio == aulay_inicio - aulay_duracao or 
+                                    aulax_inicio == aulay_inicio + aulay_duracao) and 
+                                    aulax_sala != 5) else True)
+        
+        restricoes.append(online_presencial_class_problem_y)
                 
 
 class_scheduling = NaryCSP(dominio, restricoes)
