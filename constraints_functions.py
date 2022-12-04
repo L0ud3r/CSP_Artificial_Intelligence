@@ -15,6 +15,7 @@ def more_than_2_UC_per_week(dominio, uc, turma):
 
     return 0
 
+
 # Verifica se o numero de vezes que uma turma tem numa determinada sala esta entre 2 a 4 vezes
 def at_least_towfour_in_same_room(dominio, sala, turma):
     counter = 0;
@@ -31,6 +32,7 @@ def at_least_towfour_in_same_room(dominio, sala, turma):
     
     return 0
 
+# Função que retorna uma lista das disciplinas de cada aula da turma passada por parametro
 def list_of_uc_of_classes(turma):
     list = []
     
@@ -43,3 +45,15 @@ def list_of_uc_of_classes(turma):
         
     return list
 
+# Função que retorna uma lista dos dias da semana de cada aula da turma passada por parametro
+def list_of_weekday_of_classes(turma):
+    list = []
+    
+    x = (turma - 1) * 10
+    size = turma * 10 - 1
+    
+    while (x <= size):
+        list.append(f'Aula{x}.{"dia_semana"}')
+        x += 1
+        
+    return list

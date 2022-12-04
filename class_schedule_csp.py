@@ -146,9 +146,17 @@ for x in range(0, len(turma) * 10):
 
 class_scheduling = NaryCSP(dominio, restricoes)
 
+# Verifica se uma uc aparece 2 vezes por semana
 def two_lessons_uc_per_schedule(*list):
     for x in uc:
         if (list.count(x) != 2):
+            return False
+    return True
+
+# Verifica se tem mais de 3 aulas por dia
+def three_lessons_per_day(*list):
+    for x in range(1,6):
+        if (list.count(x) > 3):
             return False
     return True
 
@@ -156,6 +164,8 @@ def two_lessons_uc_per_schedule(*list):
 for x in turma:
     two_lessons_of_each_subject_per_week_constraint = Constraint(tuple(list_of_uc_of_classes(x)), two_lessons_uc_per_schedule)
     restricoes.append(two_lessons_of_each_subject_per_week_constraint)
+    tree_lessons_per_day_constraint = Constraint(tuple(list_of_weekday_of_classes(x)), three_lessons_per_day)
+    restricoes.append(tree_lessons_per_day_constraint)
 
 #region Prints Teste
 
