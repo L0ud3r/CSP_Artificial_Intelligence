@@ -1,6 +1,8 @@
 from csp import *
 from classes import *
 from constraints_functions import *
+import warnings 
+warnings.filterwarnings('ignore')
 
 # region Variaveis
 
@@ -15,14 +17,14 @@ prox_inicial = 10
 
 aulas = []
 
+dominio = {}
+
+restricoes = []
+
 # loop para criar as aulas necessárias (10 aulas por turma)
 for i in range(len(turma) * 10):
     novaAula = Aula(None, None, None, None, None, None)
     aulas.append(novaAula)
-
-dominio = {}
-
-restricoes = []
 
 # endregion
 
