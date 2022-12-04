@@ -47,29 +47,27 @@ for turma_atual in turma:
 
 
 # Ciclo de atribuição de valores ao dominio para disciplina, dia da semana, duracao e hora de inicio de aula
-for index, list_el in enumerate(aulas):
-    dominio.update({f'Aula{index}.uc': random.sample(set(range(1, len(uc)+1)),1)})  # disciplina
-    dominio.update({f'Aula{index}.dia_semana': set(range(1, 6))})  # Dia semana
-    dominio.update({f'Aula{index}.duracao': {2}})  # Tempo de aula
-    dominio.update({f'Aula{index}.inicioAula': set(range(9, 18))}) # Inicio até Inicio do ultimo bloco
+for x, list_enumerate in enumerate(aulas):
+    dominio.update({f'Aula{x}.uc': random.sample(set(range(1, len(uc)+1)),1)})  # disciplina
+    dominio.update({f'Aula{x}.dia_semana': set(range(1, 6))})  # Dia semana
+    dominio.update({f'Aula{x}.duracao': {2}})  # Tempo de aula
+    dominio.update({f'Aula{x}.inicioAula': set(range(9, 18))}) # Inicio até Inicio do ultimo bloco
 
 
 # Ciclos que percorrem as turmas (fazendo comparação de cada aula entre cada turma)
 for x in range(0, len(turma) * 10):
     for y in range(x + 1, len(turma) * 10):
         
-        # Para um slot do horario, em diferentes horarios não pode ter a mesma uc
+       # Evita que para diferentes turmas tenham a mesma uc no mesmo bloco de um determinado dia
         one_uc_per_timeslot = Constraint((f'Aula{x}.uc', f'Aula{y}.uc',
-                                          f'Aula{x}.dia_semana', f'Aula{y}.dia_semana',
-                                          f'Aula{x}.inicioAula', f'Aula{y}.inicioAula',
-                                          f'Aula{x}.duracao', f'Aula{y}.duracao'), 
-                                         lambda aulax_uc, aulay_uc, 
-                                                aulax_dia, aulay_dia,
-                                                aulax_inicio, aulay_inicio,
-                                                aulax_duracao, aulay_duracao:
-                            (aulax_inicio >= (aulay_inicio + aulay_duracao) or aulay_inicio >= (aulax_inicio + aulax_duracao))
-                            if (aulax_uc == aulay_uc and aulax_dia == aulay_dia) else True)
-        restricoes.append(one_uc_per_timeslot)
+                                          f'Aula{x}.turma', f'Aula{y}.turma',
+                                          f'Aula{x}.dia_semana',f'Aula{y}.dia_semana'
+                                          ), lambda aulax_uc, aulay_uc,
+                                                    aulax_turma, aulay_turma,
+                                                    aulax_dia, aulay_dia,:
+                                                        
+                                (aulax_dia != aulay_dia)
+                                if (aulax_uc == aulay_uc and aulax_turma == aulay_turma) else True)
 
         # Para um slot do horario, em diferentes horarios não pode ter a mesma sala
         one_classroom_per_timeslot = Constraint((f'Aula{x}.sala', f'Aula{y}.sala',
