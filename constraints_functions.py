@@ -14,3 +14,19 @@ def more_than_2_UC_per_week(dominio, uc, turma):
     if (counter >= 1 and counter <= 2): return 1
 
     return 0
+
+# Verifica se o numero de vezes que uma turma tem numa determinada sala esta entre 2 a 4 vezes
+def at_least_towfour_in_same_room(dominio, sala, turma):
+    counter = 0;
+    for x in range(0, 20):
+        for y in range(x+1, 20):
+            listAuxxSala = dominio[f'Aula{x}.sala']
+            listAuxySala = dominio[f'Aula{y}.sala']
+            listAuxxTurma = dominio[f'Aula{x}.turma']
+            listAuxyTurma = dominio[f'Aula{y}.turma']
+            
+            if((listAuxxSala == listAuxySala == sala) and (listAuxxTurma == listAuxyTurma == turma)): counter += 1;
+    
+    if(counter >= 2 and counter <= 4): return 1 
+    
+    return 0

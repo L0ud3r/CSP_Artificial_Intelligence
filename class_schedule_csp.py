@@ -167,5 +167,6 @@ class_scheduling = NaryCSP(dominio, restricoes)
 #endregion
 
 print(ac_search_solver(class_scheduling, arc_heuristic=sat_up))
-print(more_than_2_UC_per_week(dominio,1,1))
+#print(at_least_towfour_in_same_room(dominio,1,{1}))
+#print(more_than_2_UC_per_week(dominio,1,1))
 #print(more_than_2_UC_per_week(get_only_list_of_attribute_from_class(x, "uc"),turma[1],2,{1}))
