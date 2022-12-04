@@ -69,6 +69,8 @@ for x in range(0, len(turma) * 10):
                                 (aulax_dia != aulay_dia)
                                 if (aulax_uc == aulay_uc and aulax_turma == aulay_turma) else True)
 
+        restricoes.append(one_uc_per_timeslot)
+        
         # Para um slot do horario, em diferentes horarios não pode ter a mesma sala
         one_classroom_per_timeslot = Constraint((f'Aula{x}.sala', f'Aula{y}.sala',
                                                 f'Aula{x}.dia_semana',f'Aula{y}.dia_semana',
@@ -115,7 +117,6 @@ for x in range(0, len(turma) * 10):
                                                                        aulax_inicio == aulay_inicio - aulax_duracao or
                                                                        aulax_inicio == aulay_inicio + aulax_duracao) and
                                                                       aulax_sala != 5) else True)
-        restricoes.append(online_class_not_after_presencial_class_after)
 
         # As aulas online não podem ser reservadas imediatamente antes de uma aula presencial.
         online_class_not_after_presencial_class_before = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
