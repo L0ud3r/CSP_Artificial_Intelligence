@@ -13,7 +13,6 @@ sala = { 1: "201", 2: "202", 3: "104", 4: "108", 5: "online" }
 aula_inicial = 0
 prox_inicial = 10
 
-
 aulas = []
 
 # loop para criar as aulas necessárias (10 aulas por turma)
@@ -144,8 +143,6 @@ for x in range(0, len(turma) * 10):
         restricoes.append(online_presencial_class_problem_y)
                 
 
-class_scheduling = NaryCSP(dominio, restricoes)
-
 # Verifica se uma uc aparece 2 vezes por semana
 def two_lessons_uc_per_schedule(*list):
     for x in uc:
@@ -176,6 +173,8 @@ for x in turma:
     # print(class_scheduling)
 
 #endregion
+
+class_scheduling = NaryCSP(dominio, restricoes)
 
 print(ac_search_solver(class_scheduling, arc_heuristic=sat_up))
 #print(at_least_towfour_in_same_room(dominio,1,{1}))
