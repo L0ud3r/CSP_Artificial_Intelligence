@@ -71,30 +71,31 @@ for x in range(0, len(turma) * 10):
 
         # Para um slot do horario, em diferentes horarios não pode ter a mesma sala
         one_classroom_per_timeslot = Constraint((f'Aula{x}.sala', f'Aula{y}.sala',
-                                                 f'Aula{x}.dia_semana', f'Aula{y}.dia_semana',
-                                                 f'Aula{x}.inicioAula', f'Aula{y}.inicioAula',
-                                                 f'Aula{x}.duracao', f'Aula{y}.duracao'), 
-                                                lambda aulax_sala, aulay_sala,
-                                                       aulax_dia, aulay_dia,
-                                                       aulax_inicio, aulay_inicio,
-                                                       aulax_duracao, aulay_duracao: 
-                                                (aulax_inicio >= (aulay_inicio + aulay_duracao) or
-                                                aulay_inicio >= (aulax_inicio + aulax_duracao)) 
-                                                if (aulax_sala == aulay_sala and aulax_dia == aulay_dia and aulax_sala != 5) else True)
+                                                f'Aula{x}.dia_semana',f'Aula{y}.dia_semana',
+                                                f'Aula{x}.duracao',f'Aula{y}.duracao',
+                                                f'Aula{x}.inicioAula',f'Aula{y}.inicioAula',
+                                                ), lambda aulax_sala, aulay_sala,
+                                                          aulax_dia, aulay_dia, 
+                                                          aulax_duracao, aulay_duracao,
+                                                          aulax_inicio, aulay_inicio:
+                                                              
+                                (aulax_inicio >= (aulay_inicio + aulay_duracao) or aulay_inicio >= (aulax_inicio + aulax_duracao))
+                                if (aulax_sala != 5 and aulax_sala == aulay_sala and aulax_dia == aulay_dia) else True)
         
         restricoes.append(one_classroom_per_timeslot)
 
         # Para um slot do horario, em diferentes horarios não pode ter a mesma turma
         one_class_per_timeslot = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
-                                             f'Aula{x}.dia_semana', f'Aula{y}.dia_semana',
-                                             f'Aula{x}.inicioAula', f'Aula{y}.inicioAula',
-                                             f'Aula{x}.duracao', f'Aula{y}.duracao'), 
-                                            lambda aulax_turma, aulay_turma,
-                                            aulax_dia, aulay_dia,
-                                            aulax_inicio, aulay_inicio,
-                                            aulax_duracao, aulay_duracao:
-                            (aulax_inicio >= (aulay_inicio + aulay_duracao) or aulay_inicio >= (aulax_inicio + aulax_duracao))
-                            if (aulax_turma == aulay_turma and aulax_dia == aulay_dia) else True)
+                                            f'Aula{x}.dia_semana',f'Aula{y}.dia_semana',
+                                            f'Aula{x}.duracao',f'Aula{y}.duracao',
+                                            f'Aula{x}.inicioAula',f'Aula{y}.inicioAula'
+                                            ), lambda aulax_turma, aulay_turma,
+                                                      aulax_dia, aulay_dia, 
+                                                      aulax_duracao, aulay_duracao,
+                                                      aulax_inicio, aulay_inicio: 
+                                                          
+                                (aulax_inicio >= (aulay_inicio + aulay_duracao) or aulay_inicio >= (aulax_inicio + aulax_duracao))
+                                if (aulax_turma == aulay_turma and aulax_dia == aulay_dia) else True)
         
         restricoes.append(one_class_per_timeslot)
 
