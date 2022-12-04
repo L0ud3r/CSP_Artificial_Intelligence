@@ -48,7 +48,7 @@ for turma_atual in turma:
 
 # Ciclo de atribuição de valores ao dominio para disciplina, dia da semana, duracao e hora de inicio de aula
 for x, list_enumerate in enumerate(aulas):
-    dominio.update({f'Aula{x}.uc': random.sample(set(range(1, len(uc)+1)),1)})  # disciplina
+    dominio.update({f'Aula{x}.uc': set(range(1, len(uc)+1))})  # disciplina
     dominio.update({f'Aula{x}.dia_semana': set(range(1, 6))})  # Dia semana
     dominio.update({f'Aula{x}.duracao': {2}})  # Tempo de aula
     dominio.update({f'Aula{x}.inicioAula': set(range(9, 18))}) # Inicio até Inicio do ultimo bloco
@@ -133,27 +133,20 @@ for x in range(0, len(turma) * 10):
                                                                         aulax_inicio == aulay_inicio + aulay_duracao) and
                                                                        aulay_sala != 5) else True)
         restricoes.append(online_class_not_after_presencial_class_before)
-
-        # Uma turma não deve ter mais de 3 aulas por dia.
-        # A solução foi certificar de que as aulas a preencher são 2 horas após a aula X, de forma a que ocupe o horario inteiro e limite assim o numero de aulas diarias
-        # As condições são para o caso de ser antes da aulaX ou depois da aulaX
-        atmost_three = Constraint((f'Aula{x}.turma', f'Aula{y}.turma',
-                                   f'Aula{x}.dia_semana', f'Aula{y}.dia_semana',
-                                   f'Aula{x}.inicioAula', f'Aula{y}.inicioAula',
-                                   f'Aula{x}.duracao'),
-                                  lambda aulax_turma, aulay_turma,
-                                         aulax_dia, aulay_dia,
-                                         aulax_inicio, aulay_inicio,
-                                         aulax_duracao: 
-                                  (aulay_inicio <= aulax_inicio and
-                                   aulay_inicio >= aulax_inicio - aulax_duracao*2) or
-                                  (aulay_inicio >= aulax_inicio and
-                                   aulay_inicio <= aulax_inicio + aulax_duracao*2) 
-                                                                                                                                                            if(aulax_turma == aulay_turma and aulax_dia == aulay_dia) else True)
-        restricoes.append(atmost_three)
                 
 
 class_scheduling = NaryCSP(dominio, restricoes)
+
+def two_lessons_uc_per_schedule(*list):
+    for x in uc:
+        if (list.count(x) != 2):
+            return False
+    return True
+
+
+for x in turma:
+    two_lessons_of_each_subject_per_week_constraint = Constraint(tuple(list_of_uc_of_classes(x)), two_lessons_uc_per_schedule)
+    restricoes.append(two_lessons_of_each_subject_per_week_constraint)
 
 #region Prints Teste
 

@@ -30,3 +30,16 @@ def at_least_towfour_in_same_room(dominio, sala, turma):
     if(counter >= 2 and counter <= 4): return 1 
     
     return 0
+
+def list_of_uc_of_classes(turma):
+    list = []
+    
+    x = (turma - 1) * 10
+    size = turma * 10 - 1
+    
+    while (x <= size):
+        list.append(f'Aula{x}.{"uc"}')
+        x += 1
+        
+    return list
+
