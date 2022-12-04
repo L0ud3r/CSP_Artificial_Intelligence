@@ -1,46 +1,33 @@
 from csp import *
 from classes import *
-from constraints_check import *
-import warnings
-import math
-warnings.filterwarnings("ignore")
 
-# region objetos testes
-turma = {
-    1: "a",
-    2: "b"
-}
+# region Variaveis
 
-uc = {
-    1: "matematica",
-    2: "ciencias",
-    3: "ingles",
-    4: "historia"
-}
+turma = { 1: "a", 2: "b" }
 
-sala = {
-    1: "201",
-    2: "202",
-    3: "104",
-    4: "108",
-    5: "online"
-}
+uc = { 1: "matematica", 2: "ciencias", 3: "ingles", 4: "historia" , 5:"aplicacoes informaticas" }
 
-# endregion
+sala = { 1: "201", 2: "202", 3: "104", 4: "108", 5: "online" }
 
-# region code
+aula_inicial = 0
+prox_inicial = 10
+
 
 aulas = []
-for i in range(len(turma)*10):
+
+# loop para criar as aulas necessárias (10 aulas por turma)
+for i in range(len(turma) * 10):
     novaAula = Aula(None, None, None, None, None, None)
     aulas.append(novaAula)
 
 dominio = {}
 
-aula_inicial = 0
-prox_inicial = 10
+restricoes = []
 
-# FAZER DENTRO DESTE CICLO UMA FORMA DE DISTRIBUIR AS AULAS ONLINE
+# endregion
+
+
+# Ciclo para atribuição de salas a cada aula, inclusive aulas online, atribuindo esses mesmo valores ao dominio
 for turma_atual in turma:
     aulas_online_atuais = 0
     aulas_online_max = 2
@@ -52,13 +39,13 @@ for turma_atual in turma:
             dominio.update({f'Aula{aula_inicial}.sala': {5}})
         else:
             dominio.update({f'Aula{aula_inicial}.sala': random.sample(set(range(1, len(sala))),1)})
-            
         aulas_online_atuais += 1
         aula_inicial += 1
     aula_inicial = prox_inicial
     prox_inicial += 10
 
 
+# Ciclo de atribuição de valores ao dominio para disciplina, dia da semana, duracao e hora de inicio de aula
 for index, list_el in enumerate(aulas):
     dominio.update({f'Aula{index}.uc': random.sample(set(range(1, len(uc)+1)),1)})  # disciplina
     dominio.update({f'Aula{index}.dia_semana': set(range(1, 6))})  # Dia semana
@@ -66,11 +53,10 @@ for index, list_el in enumerate(aulas):
     dominio.update({f'Aula{index}.inicioAula': set(range(9, 18))}) # Inicio até Inicio do ultimo bloco
 
 
-restricoes = []
-
-
-for x in range(0, len(turma)*10):
-    for y in range(x+1, len(turma)*10):
+# Ciclos que percorrem as turmas (fazendo comparação de cada aula entre cada turma)
+for x in range(0, len(turma) * 10):
+    for y in range(x + 1, len(turma) * 10):
+        
         # Para um slot do horario, em diferentes horarios não pode ter a mesma uc
         one_uc_per_timeslot = Constraint((f'Aula{x}.uc', f'Aula{y}.uc',
                                           f'Aula{x}.dia_semana', f'Aula{y}.dia_semana',
