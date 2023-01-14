@@ -174,7 +174,7 @@ for x in turma:
     uc_twice_per_week = Constraint(tuple(list_of_uc_of_classes(x)), two_lessons_uc_per_schedule)
     
     restricoes.append(uc_twice_per_week)
-    
+     
     # Só pode haver um máximo de 3 aulas por dia
     max_three_lessons_per_day = Constraint(tuple(list_of_weekday_of_classes(x)), three_lessons_per_day)
     
